@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: CNN-Cat-health-classifier
+Version: 0.0.0
+Summary: A small python package for CNN app
+Home-page: https://github.com/Nkifor/mlops_cat_disease
+Author: Nkifor
+Author-email: stasiek3000@gmail.com
+Project-URL: Bug Tracker, https://github.com/Nkifor/mlops_cat_disease/issues

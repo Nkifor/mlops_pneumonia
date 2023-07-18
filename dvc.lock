@@ -1,0 +1,117 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: d748fbb8d184ead2c0fc8f2e7d70f985
+      size: 808
+    - path: src/CNN_Cat_health_classifier/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 0574917a468f6c1e77416c7493870585
+      size: 1002
+    outs:
+    - path: artifacts/data_ingestion/cats_healthy_and_sick
+      hash: md5
+      md5: 6da2d16e0d3f23374a4ca4eea9e24255.dir
+      size: 10239574
+      nfiles: 83
+  prepare_base_model:
+    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: d748fbb8d184ead2c0fc8f2e7d70f985
+      size: 808
+    - path: src/CNN_Cat_health_classifier/pipeline/stage_02_prepare_base_model.py
+      hash: md5
+      md5: dd1c639336a823c11e0b17bdf187be32
+      size: 1081
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: 2e9986ded2552c63f900db30cdd9119d.dir
+      size: 118059248
+      nfiles: 2
+  training:
+    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_03_training.py
+    deps:
+    - path: artifacts/data_ingestion/cats_healthy_and_sick
+      hash: md5
+      md5: 6da2d16e0d3f23374a4ca4eea9e24255.dir
+      size: 10239574
+      nfiles: 83
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: 2e9986ded2552c63f900db30cdd9119d.dir
+      size: 118059248
+      nfiles: 2
+    - path: config/config.yaml
+      hash: md5
+      md5: d748fbb8d184ead2c0fc8f2e7d70f985
+      size: 808
+    - path: src/CNN_Cat_health_classifier/components/prepare_callbacks.py
+      hash: md5
+      md5: fdc90c737c330dbc628cb5c09d1c9dcb
+      size: 1088
+    - path: src/CNN_Cat_health_classifier/pipeline/stage_03_training.py
+      hash: md5
+      md5: f983aabbe4efc4657822847f30f6a840
+      size: 1354
+    params:
+      params.yaml:
+        AUGMENTATION: true
+        BATCH_SIZE: 16
+        EPOCHS: 5
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: artifacts/training/model.h5
+      hash: md5
+      md5: 5d947119d7a81795ca018dd7c0d1abb9
+      size: 59340720
+  evaluation:
+    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_04_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/cats_healthy_and_sick
+      hash: md5
+      md5: 6da2d16e0d3f23374a4ca4eea9e24255.dir
+      size: 10239574
+      nfiles: 83
+    - path: artifacts/training/model.h5
+      hash: md5
+      md5: 5d947119d7a81795ca018dd7c0d1abb9
+      size: 59340720
+    - path: config/config.yaml
+      hash: md5
+      md5: d748fbb8d184ead2c0fc8f2e7d70f985
+      size: 808
+    - path: src/CNN_Cat_health_classifier/pipeline/stage_04_evaluation.py
+      hash: md5
+      md5: 83c4d53b8a9b05ba17f558f61d9372e8
+      size: 924
+    params:
+      params.yaml:
+        BATCH_SIZE: 16
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 822fd379a91dd61541cc01e15966effa
+      size: 73
