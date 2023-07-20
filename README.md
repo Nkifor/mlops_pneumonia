@@ -1,4 +1,4 @@
-# Cat disease detector by facial expression of cat
+# Xray pneumonia detector to differentiate ill and healthy patient
 
 ## Workflows
 
