@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from CNN_Cat_health_classifier import logger
+from CNN_pneumonia_xray_detector import logger
 import json
 import joblib
 from ensure import ensure_annotations

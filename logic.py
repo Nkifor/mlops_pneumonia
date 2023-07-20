@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 
 #20:34
 
-project_name = "CNN_Cat_health_classifier"
+project_name = "CNN_pneumonia_xray_detector"
 
 
 # research/trials is needed for experiments to keep them there

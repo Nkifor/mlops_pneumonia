@@ -19,4 +19,4 @@ logging.basicConfig(
 )
 
 
-logger = logging.getLogger("CNN_Cat_health_classifier_logger")
+logger = logging.getLogger("CNN_pneumonia_xray_detector_logger")
