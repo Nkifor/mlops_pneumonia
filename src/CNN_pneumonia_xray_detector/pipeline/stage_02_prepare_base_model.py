@@ -1,6 +1,6 @@
-from CNN_Cat_health_classifier.config.configuration import ConfigurationManager
-from CNN_Cat_health_classifier.components.prepare_base_model import PrepareBaseModel
-from CNN_Cat_health_classifier import logger
+from CNN_pneumonia_xray_detector.config.configuration import ConfigurationManager
+from CNN_pneumonia_xray_detector.components.prepare_base_model import PrepareBaseModel
+from CNN_pneumonia_xray_detector import logger
 
 
 

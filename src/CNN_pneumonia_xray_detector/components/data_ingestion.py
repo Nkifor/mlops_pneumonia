@@ -1,9 +1,9 @@
 import os
 import urllib.request as request
 import zipfile
-from CNN_Cat_health_classifier import logger
-from CNN_Cat_health_classifier.utils.common import get_size
-from CNN_Cat_health_classifier.entity.config_entity import DataIngestionConfig
+from CNN_pneumonia_xray_detector import logger
+from CNN_pneumonia_xray_detector.utils.common import get_size
+from CNN_pneumonia_xray_detector.entity.config_entity import DataIngestionConfig
 from pathlib import Path
 
 

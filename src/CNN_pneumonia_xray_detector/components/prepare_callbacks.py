@@ -3,7 +3,7 @@ import urllib.request as request
 from zipfile import ZipFile
 import tensorflow as tf
 import time
-from CNN_Cat_health_classifier.entity.config_entity import PrepareCallbacksConfig
+from CNN_pneumonia_xray_detector.entity.config_entity import PrepareCallbacksConfig
 
 class PrepareCallback:
     def __init__(self, config: PrepareCallbacksConfig):

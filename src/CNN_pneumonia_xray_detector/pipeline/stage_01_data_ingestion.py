@@ -1,6 +1,6 @@
-from CNN_Cat_health_classifier.config.configuration import ConfigurationManager
-from CNN_Cat_health_classifier.components.data_ingestion import DataIngestion
-from CNN_Cat_health_classifier import logger
+from CNN_pneumonia_xray_detector.config.configuration import ConfigurationManager
+from CNN_pneumonia_xray_detector.components.data_ingestion import DataIngestion
+from CNN_pneumonia_xray_detector import logger
 
 
 STAGE_NAME = "Data Ingestion Stage"

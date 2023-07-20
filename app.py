@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify, render_template
 import os
 from flask_cors import CORS, cross_origin
-from CNN_Cat_health_classifier.utils.common import decodeImage
-from CNN_Cat_health_classifier.pipeline.predict import PredictionPipeline
+from CNN_pneumonia_xray_detector.utils.common import decodeImage
+from CNN_pneumonia_xray_detector.pipeline.predict import PredictionPipeline
 
 
 os.putenv('LANG', 'en_US.UTF-8')

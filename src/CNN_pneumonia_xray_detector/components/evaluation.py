@@ -1,7 +1,7 @@
 import tensorflow as tf
 from pathlib import Path
-from CNN_Cat_health_classifier.entity.config_entity import EvaluationConfig
-from CNN_Cat_health_classifier.utils.common import save_json
+from CNN_pneumonia_xray_detector.entity.config_entity import EvaluationConfig
+from CNN_pneumonia_xray_detector.utils.common import save_json
 
 
 

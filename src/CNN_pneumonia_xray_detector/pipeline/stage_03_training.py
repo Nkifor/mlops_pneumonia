@@ -1,7 +1,7 @@
-from CNN_Cat_health_classifier.config.configuration import ConfigurationManager
-from CNN_Cat_health_classifier.components.prepare_callbacks import PrepareCallback
-from CNN_Cat_health_classifier.components.training import Training
-from CNN_Cat_health_classifier import logger
+from CNN_pneumonia_xray_detector.config.configuration import ConfigurationManager
+from CNN_pneumonia_xray_detector.components.prepare_callbacks import PrepareCallback
+from CNN_pneumonia_xray_detector.components.training import Training
+from CNN_pneumonia_xray_detector import logger
 
 
 

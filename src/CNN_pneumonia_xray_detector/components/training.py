@@ -1,4 +1,4 @@
-from CNN_Cat_health_classifier.entity.config_entity import TrainingConfig
+from CNN_pneumonia_xray_detector.entity.config_entity import TrainingConfig
 import tensorflow as tf
 from pathlib import Path
 
