@@ -48,3 +48,65 @@ http://www.cell.com/cell/fulltext/S0092-8674(18)30154-5
 ## Dataset source:
 1. https://data.mendeley.com/datasets/rscbjbr9sj/2 - main source of data
 2. https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia?datasetId=17810 -  source of this train dataset (in original source there is also test and validating dataset)
+
+
+
+# AWS-CICD-Deployment-with-Github-Actions
+1. Login to AWS console.
+2. Create IAM user for deployment
+
+## With acces specified below
+
+ - EC2 access : It is virtual machine
+ - ECR: Elastic Container registry to save your docker image in aws
+
+
+## Description: About the deployment
+
+1. Build docker image of the source code
+
+2. Push your docker image to ECR
+
+3. Launch Your EC2 
+
+4. Pull Your image from ECR in EC2
+
+5. Lauch your docker image in EC2
+
+## Policy:
+
+1. AmazonEC2ContainerRegistryFullAccess
+
+2. AmazonEC2FullAccess
+3. Create ECR repo to store/save docker image
+ - Save the URI: 325653208527.dkr.ecr.eu-central-1.amazonaws.com/pneumonia
+4. Create EC2 machine (Ubuntu)
+5. Open EC2 and Install docker in EC2 Machine:
+
+#Optional
+
+sudo apt-get update -y
+
+sudo apt-get upgrade
+
+## Required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+6. Configure EC2 as self-hosted runner:
+setting>actions>runner>new self hosted runner> choose os> then run command one by one
+7. Setup github secrets:
+AWS_ACCESS_KEY_ID=
+
+AWS_SECRET_ACCESS_KEY=
+
+AWS_REGION = us-east-1
+
+AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+
+ECR_REPOSITORY_NAME = pneumonia
