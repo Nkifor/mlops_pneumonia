@@ -2,7 +2,7 @@ stages:
   data_ingestion:
     cmd: python src/CNN_pneumonia_xray_detector/pipeline/stage_01_data_ingestion.py
     deps:
-      - src/CNN_Cat_health_classifier/pipeline/stage_01_data_ingestion.py
+      - src/CNN_pneumonia_xray_detector/pipeline/stage_01_data_ingestion.py
       - config/config.yaml
     outs:
       - artifacts/data_ingestion/xraychest
@@ -11,7 +11,7 @@ stages:
   prepare_base_model:
    cmd: python src/CNN_pneumonia_xray_detector/pipeline/stage_02_prepare_base_model.py
    deps:
-     - src/CNN_Cat_health_classifier/pipeline/stage_02_prepare_base_model.py
+     - src/CNN_pneumonia_xray_detector/pipeline/stage_02_prepare_base_model.py
      - config/config.yaml
    params:
      - IMAGE_SIZE

@@ -1,36 +1,36 @@
 schema: '2.0'
 stages:
   data_ingestion:
-    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_01_data_ingestion.py
+    cmd: python src/CNN_pneumonia_xray_detector/pipeline/stage_01_data_ingestion.py
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: d748fbb8d184ead2c0fc8f2e7d70f985
-      size: 808
-    - path: src/CNN_Cat_health_classifier/pipeline/stage_01_data_ingestion.py
+      md5: f0554865e7ab0c75d6681035b8164f7e
+      size: 798
+    - path: src/CNN_pneumonia_xray_detector/pipeline/stage_01_data_ingestion.py
       hash: md5
-      md5: 0574917a468f6c1e77416c7493870585
-      size: 1002
+      md5: 6a5344492c8b7729cbe49f7df32eff4d
+      size: 1008
     outs:
-    - path: artifacts/data_ingestion/cats_healthy_and_sick
+    - path: artifacts/data_ingestion/xraychest
       hash: md5
-      md5: 6da2d16e0d3f23374a4ca4eea9e24255.dir
-      size: 10239574
-      nfiles: 83
+      md5: a4f249151bc69ac9f02a872b7d5ed046.dir
+      size: 1154397616
+      nfiles: 5216
   prepare_base_model:
-    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_02_prepare_base_model.py
+    cmd: python src/CNN_pneumonia_xray_detector/pipeline/stage_02_prepare_base_model.py
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: d748fbb8d184ead2c0fc8f2e7d70f985
-      size: 808
-    - path: src/CNN_Cat_health_classifier/pipeline/stage_02_prepare_base_model.py
+      md5: f0554865e7ab0c75d6681035b8164f7e
+      size: 798
+    - path: src/CNN_pneumonia_xray_detector/pipeline/stage_02_prepare_base_model.py
       hash: md5
-      md5: dd1c639336a823c11e0b17bdf187be32
-      size: 1081
+      md5: 6c1e87f6c34413c2cc7f9a6db4802667
+      size: 1087
     params:
       params.yaml:
-        CLASSES: 2
+        CLASSES: 3
         IMAGE_SIZE:
         - 224
         - 224
@@ -41,39 +41,39 @@ stages:
     outs:
     - path: artifacts/prepare_base_model
       hash: md5
-      md5: 2e9986ded2552c63f900db30cdd9119d.dir
-      size: 118059248
+      md5: a2d958fc14fc907160875fe0be6b6198.dir
+      size: 118159600
       nfiles: 2
   training:
-    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_03_training.py
+    cmd: python src/CNN_pneumonia_xray_detector/pipeline/stage_03_training.py
     deps:
-    - path: artifacts/data_ingestion/cats_healthy_and_sick
+    - path: artifacts/data_ingestion/xraychest
       hash: md5
-      md5: 6da2d16e0d3f23374a4ca4eea9e24255.dir
-      size: 10239574
-      nfiles: 83
+      md5: a4f249151bc69ac9f02a872b7d5ed046.dir
+      size: 1154397616
+      nfiles: 5216
     - path: artifacts/prepare_base_model
       hash: md5
-      md5: 2e9986ded2552c63f900db30cdd9119d.dir
-      size: 118059248
+      md5: a2d958fc14fc907160875fe0be6b6198.dir
+      size: 118159600
       nfiles: 2
     - path: config/config.yaml
       hash: md5
-      md5: d748fbb8d184ead2c0fc8f2e7d70f985
-      size: 808
-    - path: src/CNN_Cat_health_classifier/components/prepare_callbacks.py
+      md5: f0554865e7ab0c75d6681035b8164f7e
+      size: 798
+    - path: src/CNN_pneumonia_xray_detector/components/prepare_callbacks.py
       hash: md5
-      md5: fdc90c737c330dbc628cb5c09d1c9dcb
-      size: 1088
-    - path: src/CNN_Cat_health_classifier/pipeline/stage_03_training.py
+      md5: e8c1340e89f660496489e82e52609dcf
+      size: 1090
+    - path: src/CNN_pneumonia_xray_detector/pipeline/stage_03_training.py
       hash: md5
-      md5: f983aabbe4efc4657822847f30f6a840
-      size: 1354
+      md5: 9ddd156f2e23e93836fcbdadbf411009
+      size: 1362
     params:
       params.yaml:
         AUGMENTATION: true
         BATCH_SIZE: 16
-        EPOCHS: 5
+        EPOCHS: 7
         IMAGE_SIZE:
         - 224
         - 224
@@ -81,28 +81,28 @@ stages:
     outs:
     - path: artifacts/training/model.h5
       hash: md5
-      md5: 5d947119d7a81795ca018dd7c0d1abb9
-      size: 59340720
+      md5: 8b12429d42abed5de7be8d345d685f1a
+      size: 59541424
   evaluation:
-    cmd: python src/CNN_Cat_health_classifier/pipeline/stage_04_evaluation.py
+    cmd: python src/CNN_pneumonia_xray_detector/pipeline/stage_04_evaluation.py
     deps:
-    - path: artifacts/data_ingestion/cats_healthy_and_sick
+    - path: artifacts/data_ingestion/xraychest
       hash: md5
-      md5: 6da2d16e0d3f23374a4ca4eea9e24255.dir
-      size: 10239574
-      nfiles: 83
+      md5: a4f249151bc69ac9f02a872b7d5ed046.dir
+      size: 1154397616
+      nfiles: 5216
     - path: artifacts/training/model.h5
       hash: md5
-      md5: 5d947119d7a81795ca018dd7c0d1abb9
-      size: 59340720
+      md5: 8b12429d42abed5de7be8d345d685f1a
+      size: 59541424
     - path: config/config.yaml
       hash: md5
-      md5: d748fbb8d184ead2c0fc8f2e7d70f985
-      size: 808
-    - path: src/CNN_Cat_health_classifier/pipeline/stage_04_evaluation.py
+      md5: f0554865e7ab0c75d6681035b8164f7e
+      size: 798
+    - path: src/CNN_pneumonia_xray_detector/pipeline/stage_04_evaluation.py
       hash: md5
-      md5: 83c4d53b8a9b05ba17f558f61d9372e8
-      size: 924
+      md5: 298c4ea327e3e80fb8370020dcca24f4
+      size: 930
     params:
       params.yaml:
         BATCH_SIZE: 16
@@ -113,5 +113,5 @@ stages:
     outs:
     - path: scores.json
       hash: md5
-      md5: 822fd379a91dd61541cc01e15966effa
-      size: 73
+      md5: 70e597d9165018defc4af3608d0650bd
+      size: 72

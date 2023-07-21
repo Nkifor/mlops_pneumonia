@@ -194,3 +194,42 @@ x==========x]
 [2023-07-20 17:38:12,045: INFO: main: >>>>>> Stage Evaluation stage Completed <<<<<<
 
 x==========x]
+[2023-07-21 10:59:00,014: INFO: stage_01_data_ingestion: >>>>> Stage | Data Ingestion Stage | Started]
+[2023-07-21 10:59:00,017: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-21 10:59:00,019: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-21 10:59:00,020: INFO: common: created directory at: artifacts]
+[2023-07-21 10:59:00,022: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-21 10:59:00,022: INFO: data_ingestion: File already exists of size: ~ 1118184 KB]
+[2023-07-21 10:59:10,832: INFO: stage_01_data_ingestion: >>>>> Stage | Data Ingestion Stage | Finished 
+
+ ========================================]
+[2023-07-21 11:00:05,233: INFO: stage_02_prepare_base_model: *******************]
+[2023-07-21 11:00:05,234: INFO: stage_02_prepare_base_model: >>>>>> Stage | Prepare Base Model Stage | Started <<<<<<]
+[2023-07-21 11:00:05,237: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-21 11:00:05,240: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-21 11:00:05,240: INFO: common: created directory at: artifacts]
+[2023-07-21 11:00:05,241: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-07-21 11:00:05,690: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-07-21 11:00:05,867: INFO: stage_02_prepare_base_model: >>>>>> Stage | Prepare Base Model Stage | Finished <<<<<<
+
+x==========x]
+[2023-07-21 11:00:14,122: INFO: stage_03_training: *******************]
+[2023-07-21 11:00:14,123: INFO: stage_03_training: >>>>>> Stage | Training Stage | Started <<<<<<]
+[2023-07-21 11:00:14,126: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-21 11:00:14,128: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-21 11:00:14,128: INFO: common: created directory at: artifacts]
+[2023-07-21 11:00:14,129: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-21 11:00:14,129: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-21 11:00:14,131: INFO: common: created directory at: artifacts\training]
+[2023-07-21 11:27:08,700: INFO: stage_03_training: >>>>>> Stage | Training Stage | Finished <<<<<<
+
+x==========x]
+[2023-07-21 11:27:19,455: INFO: stage_04_evaluation: *******************]
+[2023-07-21 11:27:19,455: INFO: stage_04_evaluation: >>>>>> Stage | Evaluation stage | Started <<<<<<]
+[2023-07-21 11:27:19,469: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-21 11:27:19,470: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-21 11:27:19,471: INFO: common: created directory at: artifacts]
+[2023-07-21 11:28:21,424: INFO: common: json file saved at: scores.json]
+[2023-07-21 11:28:21,425: INFO: stage_04_evaluation: >>>>>> Stage | Evaluation stage | Finished <<<<<<
+
+x==========x]
