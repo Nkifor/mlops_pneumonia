@@ -233,3 +233,132 @@ x==========x]
 [2023-07-21 11:28:21,425: INFO: stage_04_evaluation: >>>>>> Stage | Evaluation stage | Finished <<<<<<
 
 x==========x]
+[2023-07-21 11:51:25,155: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 11:51:25,156: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-21 11:51:46,988: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 11:51:46] "GET / HTTP/1.1" 200 -]
+[2023-07-21 11:52:12,755: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\edu\python\mlops_projects\mlops_pneumonia_xray_detector\src\CNN_pneumonia_xray_detector\pipeline\predict.py", line 27, in predict
+    if result[1] == 1:
+IndexError: index 1 is out of bounds for axis 0 with size 1
+[2023-07-21 11:52:12,761: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 11:52:12] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2023-07-21 12:15:54,007: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 12:15:54,008: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-21 12:15:59,300: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:15:59] "GET / HTTP/1.1" 200 -]
+[2023-07-21 12:16:04,381: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:16:04] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:16:14,914: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:16:14] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:16:22,222: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:16:22] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:16:26,751: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:16:26] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:16:31,258: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000014A1B029E50> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-07-21 12:16:31,264: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:16:31] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:16:38,378: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000014A1B180790> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-07-21 12:16:38,384: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Admin\anaconda3\envs\mlops\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\edu\python\mlops_projects\mlops_pneumonia_xray_detector\src\CNN_pneumonia_xray_detector\pipeline\predict.py", line 27, in predict
+    if result[1] == 1:
+IndexError: index 1 is out of bounds for axis 0 with size 1
+[2023-07-21 12:16:38,388: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:16:38] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2023-07-21 12:18:08,948: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 12:18:08,949: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-21 12:18:13,342: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:13] "GET / HTTP/1.1" 200 -]
+[2023-07-21 12:18:18,123: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:18] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:18:23,894: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:23] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:18:30,558: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:30] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:18:36,403: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:36] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:18:44,474: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x00000181824219D0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-07-21 12:18:44,481: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:44] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:18:52,407: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x00000181824218B0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-07-21 12:18:52,414: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:52] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:18:59,164: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:18:59] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:09,188: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:09] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:14,415: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:14] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:21,680: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:21] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:26,490: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:26] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:32,451: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:32] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:37,639: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:37] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:19:44,216: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:19:44] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:23:05,503: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 12:23:05,504: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-21 12:23:11,832: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:23:11] "GET / HTTP/1.1" 200 -]
+[2023-07-21 12:23:17,910: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:23:17] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:23:43,455: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:23:43] "GET / HTTP/1.1" 200 -]
+[2023-07-21 12:26:43,788: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 12:26:43,789: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-21 12:26:49,253: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:26:49] "GET / HTTP/1.1" 200 -]
+[2023-07-21 12:27:49,787: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 12:27:49,788: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-21 12:27:53,978: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:27:53] "GET / HTTP/1.1" 200 -]
+[2023-07-21 12:28:35,610: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:28:35] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:28:43,124: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:28:43] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:28:48,195: INFO: _internal: 192.168.0.248 - - [21/Jul/2023 12:28:48] "POST /predict HTTP/1.1" 200 -]
+[2023-07-21 12:36:05,206: INFO: stage_03_training: *******************]
+[2023-07-21 12:36:05,206: INFO: stage_03_training: >>>>>> Stage | Training Stage | Started <<<<<<]
+[2023-07-21 12:36:05,214: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-21 12:36:05,216: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-21 12:36:05,217: INFO: common: created directory at: artifacts]
+[2023-07-21 12:36:05,217: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-21 12:36:05,218: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-21 12:36:05,220: INFO: common: created directory at: artifacts\training]
+[2023-07-21 13:19:54,340: INFO: stage_03_training: >>>>>> Stage | Training Stage | Finished <<<<<<
+
+x==========x]
+[2023-07-21 13:20:06,758: INFO: stage_04_evaluation: *******************]
+[2023-07-21 13:20:06,758: INFO: stage_04_evaluation: >>>>>> Stage | Evaluation stage | Started <<<<<<]
+[2023-07-21 13:20:06,774: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-21 13:20:06,776: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-21 13:20:06,777: INFO: common: created directory at: artifacts]
+[2023-07-21 13:21:12,818: INFO: common: json file saved at: scores.json]
+[2023-07-21 13:21:12,819: INFO: stage_04_evaluation: >>>>>> Stage | Evaluation stage | Finished <<<<<<
+
+x==========x]
+[2023-07-21 13:22:07,058: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.248:8080]
+[2023-07-21 13:22:07,059: INFO: _internal: [33mPress CTRL+C to quit[0m]

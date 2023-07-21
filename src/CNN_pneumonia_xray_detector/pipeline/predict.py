@@ -21,12 +21,12 @@ class PredictionPipeline:
         result = np.argmax(model.predict(test_image), axis=1)
         print(result)
 
-        if result[0] == 1:
+        if result[0] == 0:
             prediction = 'Healthy'
             return [{ "image" : prediction}]
-        if result[1] == 1:
+        if result[0] == 1:
             prediction = 'Pneumonia bacteria'
             return [{ "image" : prediction}]
-        if result[2] == 1:
+        if result[0] == 2:
             prediction = 'Pneumonia virus'
             return [{ "image" : prediction}]

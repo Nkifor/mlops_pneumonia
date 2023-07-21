@@ -1,6 +1,18 @@
 # Xray pneumonia detector to differentiate ill and healthy patient
 
-## Workflows
+![Screenshot](xraychests.PNG)
+
+## Stages of the project
+
+1. Planning desired outcome
+2. Configuration of environment setup
+3. Preparation of notebook every step and refactoring to modular form
+4. Initialization DVC repository
+5. Prediction expreriments
+6. Deployment of model
+
+
+## Iterative workflows for particular parts of the project
 
 1. Update config.yaml
 2. Update secrets.yaml [Optional]
