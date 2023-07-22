@@ -1,6 +1,6 @@
 # Xray pneumonia detector to differentiate ill and healthy patient
 
-![Screenshot](xraychests.PNG)
+![Screenshot](xraychests.png)
 
 
 ## Description and shortened context of the training data
