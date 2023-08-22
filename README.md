@@ -3,6 +3,17 @@
 ![Screenshot](xraychests.png)
 
 
+## Main technologies used:
+
+![Tensorflow](https://img.shields.io/badge/tensorflow-%23FF6F00.svg?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Github Actions](https://img.shields.io/badge/githubactions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![AWS ECR](https://img.shields.io/badge/aws-ecr-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![AWS EC2](https://img.shields.io/badge/aws-ec2-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![DVC](https://img.shields.io/badge/DVC-%23FF6F00.svg?style=for-the-badge&logo=DVC&logoColor=white)
+
+
 ## Description and shortened context of the training data
 
 The dataset is organized in one main folder : xraychest and folder for separate imaginery classes : (Pneumonia 2 types/Normal).
@@ -67,7 +78,7 @@ http://www.cell.com/cell/fulltext/S0092-8674(18)30154-5
 
 2. Push your docker image to ECR
 
-3. Launch Your EC2 
+3. Launch Your EC2
 
 4. Pull Your image from ECR in EC2
 
